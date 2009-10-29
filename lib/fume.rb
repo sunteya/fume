@@ -1,6 +1,7 @@
 require 'fume/simple_theme'
 require 'fume/authlogic'
 
+Fume::SimpleTheme.enable
 Fume::Authlogic.enable
 
 module Fume
