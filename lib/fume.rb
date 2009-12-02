@@ -1,8 +1,10 @@
 require 'fume/simple_theme'
 require 'fume/authlogic'
+require 'fume/searchlogic'
 
 Fume::SimpleTheme.enable
 Fume::Authlogic.enable
+Fume::Searchlogic.enable
 
 module Fume
   def self.root
