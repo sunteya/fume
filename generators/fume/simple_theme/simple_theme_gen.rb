@@ -1,26 +1,18 @@
-class FumeSimpleThemeGenerator < Rails::Generator::Base
+class FumeSimpleThemeGenerator < Fume::Gen::Base
 
   def manifest
     @manifest_util = Rails::Generator::Manifest.new(self)
     
     # generate_images
-    cp_files orig_source_pathname.join("images"), orig_target_pathname.join("public", "images")
+    cp_files source_root_pathname.join("images"), destination_root_pathname.join("public", "images")
     
     # generate_stylesheets
-    cp_files orig_source_pathname.join("stylesheets"), orig_target_pathname.join("public", "stylesheets"), [ "*.css" ]
+    cp_files source_root_pathname.join("stylesheets"), destination_root_pathname.join("public", "stylesheets"), [ "*.css" ]
 
     # generate_javascripts
-    cp_files orig_source_pathname.join("javascripts"), orig_target_pathname.join("public", "javascripts")
+    cp_files source_root_pathname.join("javascripts"), destination_root_pathname.join("public", "javascripts")
 
     @manifest_util
-  end
-
-  def orig_target_pathname
-    Pathname.new(self.destination_root)
-  end
-
-  def orig_source_pathname
-    Pathname.new(self.source_root)
   end
 
   def cp_files(source_pathname, target_pathname, patterns = ["**/*"])
