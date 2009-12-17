@@ -1,17 +1,15 @@
 class SimpleThemeGen < Fume::Gen::Base
 
   def manifest
-    @manifest_util = Rails::Generator::Manifest.new(self)
+    record do |m|
+      # generate_images
+      cp_files m, File.join("public", "images", "**", "*")
 
-    # generate_images
-    cp_files File.join("public", "images", "**", "*")
-    
-    # generate_stylesheets
-    cp_files File.join("public", "stylesheets", "*.css")
-    
-    # generate_javascripts
-    cp_files File.join("public", "javascripts", "**", "*")
+      # generate_stylesheets
+      cp_files m, File.join("public", "stylesheets", "*.css")
 
-    @manifest_util
+      # generate_javascripts
+      cp_files m, File.join("public", "javascripts", "**", "*")
+    end
   end
 end
