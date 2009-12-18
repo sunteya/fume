@@ -1,10 +1,12 @@
-require 'fume/simple_theme'
 require 'fume/authlogic'
 require 'fume/searchlogic'
+require 'fume/simple_theme'
+require 'fume/rails_ext'
 
-Fume::SimpleTheme.enable
 Fume::Authlogic.enable
 Fume::Searchlogic.enable
+Fume::SimpleTheme.enable
+Fume::RailsExt.enable
 
 module Fume
   def self.root
