@@ -642,9 +642,9 @@ body {
 }
 .formtastic ol li { margin-bottom: 1em; }
 .formtastic ol .required abbr {
+  line-height: 1;
   color: red;
   border: none;
-  vertical-align: super;
 }
 .formtastic ol .error {
   border-left: 0.3em solid red;
@@ -689,6 +689,32 @@ body {
 }
 .formtastic ol .text input { display: inline; }
 .formtastic ol .text .inline-hints {
+  margin: 0 0 0 1em;
+  font-style: italic;
+  display: inline;
+  color: #888888;
+}
+.formtastic ol .numeric label {
+  font-size: 1.2em;
+  color: #666666;
+  display: block;
+  padding-bottom: 0.2em;
+}
+.formtastic ol .numeric input { display: inline; }
+.formtastic ol .numeric .inline-hints {
+  margin: 0 0 0 1em;
+  font-style: italic;
+  display: inline;
+  color: #888888;
+}
+.formtastic ol .file label {
+  font-size: 1.2em;
+  color: #666666;
+  display: block;
+  padding-bottom: 0.2em;
+}
+.formtastic ol .file input { display: inline; }
+.formtastic ol .file .inline-hints {
   margin: 0 0 0 1em;
   font-style: italic;
   display: inline;
