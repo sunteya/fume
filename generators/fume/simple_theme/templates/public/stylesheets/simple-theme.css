@@ -720,6 +720,19 @@ body {
   display: inline;
   color: #888888;
 }
+.formtastic ol .password label {
+  font-size: 1.2em;
+  color: #666666;
+  display: block;
+  padding-bottom: 0.2em;
+}
+.formtastic ol .password input { display: inline; }
+.formtastic ol .password .inline-hints {
+  margin: 0 0 0 1em;
+  font-style: italic;
+  display: inline;
+  color: #888888;
+}
 .formtastic ol .check_boxes fieldset .label label { font-size: 1.2em; }
 .formtastic ol .check_boxes fieldset ol li {
   float: left;
