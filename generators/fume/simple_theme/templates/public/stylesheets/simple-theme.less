@@ -16,6 +16,7 @@ dark blue                   #0B43A8
 
 */
 
+
 #color_schemes {
 	nav: #ffffff;
 	nav-bg: #36393d;
@@ -224,6 +225,19 @@ body {
 	
 	tr.even {
 		background: #ebebeb;
+	}
+}
+
+.actions-bar {
+	.actions {
+		a, input {
+			background: #cfcfcf;
+			border: 1px solid #c1c1c1;
+		
+			:hover {
+				border: 1px solid #color_schemes['nav-bg'];
+			}
+		}
 	}
 }
 

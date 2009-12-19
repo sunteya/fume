@@ -197,20 +197,13 @@
 		
 		li {
 			float: left;
-			margin-left: 1.2em;
 			.border-top-left-radius(0.4em);
 			.border-top-right-radius(0.4em);
 
 			a {
 				display: block;
-				padding: 0.7em 0em;
-				text-decoration: none;
-			}
-		}
-		
-		li.active {
-			a {
 				padding: 0.7em 1.2em;
+				text-decoration: none;
 			}
 		}
 	}
@@ -280,12 +273,24 @@
 
 .actions-bar {
 	padding: 1em 1px;
+	line-height: 2;
 	
 	.actions {
 		float: left;
+		line-height: 1;
+		
+		a, input {
+			margin-right: 0.45em;
+			padding: 0.35em 0.45em;
+			display: block;
+			.border-radius(0.25em);
+			text-decoration: none;
+			float: left;
+		}
 	}
 	
 	.pagination {
+		line-height: 1;
 		float: right;
 		padding: 1px 0;
 	}
@@ -296,8 +301,8 @@
 		display: block;
 		float: left;
 		
-		padding: 0.25em 0.45em;
-		margin-right: 0.45em; 
+		padding: 0.35em 0.45em;
+		margin-right: 0.45em;
 		border-style: solid;
 		border-width: 1px;
 		.border-radius(0.25em);

@@ -326,7 +326,6 @@ p { margin: 15px 0; }
 }
 #main-navigation ul li {
   float: left;
-  margin-left: 1.2em;
   border-top-left-radius: 0.4em;
   -moz-border-radius-topleft: 0.4em;
   -webkit-border-top-left-radius: 0.4em;
@@ -336,10 +335,9 @@ p { margin: 15px 0; }
 }
 #main-navigation ul li a {
   display: block;
-  padding: 0.7em 0em;
+  padding: 0.7em 1.2em;
   text-decoration: none;
 }
-#main-navigation ul li.active a { padding: 0.7em 1.2em; }
 #user-navigation {
   position: absolute;
   right: 1.5em;
@@ -399,16 +397,43 @@ p { margin: 15px 0; }
 .table td form { display: inline; }
 .table td form div { display: inline; }
 .table td.last { text-align: right; }
-.actions-bar { padding: 1em 1px; }
-.actions-bar .actions { float: left; }
+.actions-bar {
+  padding: 1em 1px;
+  line-height: 2;
+}
+.actions-bar .actions {
+  float: left;
+  line-height: 1;
+}
+.actions-bar .actions a {
+  margin-right: 0.45em;
+  padding: 0.35em 0.45em;
+  display: block;
+  border-radius: 0.25em;
+  -moz-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
+  text-decoration: none;
+  float: left;
+}
+.actions-bar .actions input {
+  margin-right: 0.45em;
+  padding: 0.35em 0.45em;
+  display: block;
+  border-radius: 0.25em;
+  -moz-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
+  text-decoration: none;
+  float: left;
+}
 .actions-bar .pagination {
+  line-height: 1;
   float: right;
   padding: 1px 0;
 }
 .pagination a {
   display: block;
   float: left;
-  padding: 0.25em 0.45em;
+  padding: 0.35em 0.45em;
   margin-right: 0.45em;
   border-style: solid;
   border-width: 1px;
@@ -419,7 +444,7 @@ p { margin: 15px 0; }
 .pagination span {
   display: block;
   float: left;
-  padding: 0.25em 0.45em;
+  padding: 0.35em 0.45em;
   margin-right: 0.45em;
   border-style: solid;
   border-width: 1px;
@@ -619,6 +644,16 @@ body {
 .table th a { color: #ffffff; }
 .table td { border-bottom: 1px solid #f0f0ee; }
 .table tr.even { background: #ebebeb; }
+.actions-bar .actions a {
+  background: #cfcfcf;
+  border: 1px solid #c1c1c1;
+}
+.actions-bar .actions a:hover { border: 1px solid #36393d; }
+.actions-bar .actions input {
+  background: #cfcfcf;
+  border: 1px solid #c1c1c1;
+}
+.actions-bar .actions input:hover { border: 1px solid #36393d; }
 .pagination a {
   background: #cfcfcf;
   border: 1px solid #c1c1c1;
@@ -846,12 +881,4 @@ a { -moz-outline: none; }
 hr {
   background: #f0f0ee;
   color: #f0f0ee;
-}
-* html #header {
-  width: 1120px;
-  margin: 0 auto;
-}
-* html #page {
-  width: 1120px;
-  margin: 0 auto;
 }
