@@ -452,6 +452,7 @@ ul.list li .item .avatar {
   disabled: #888888;
   body-color: #222222;
 }
+html { background: #cfcfcf; }
 body {
   color: #222222;
   background: #cfcfcf;
