@@ -1,4 +1,4 @@
-@import "base.less";
+@import "function.less";
 
 /* =========================
  Layout
@@ -415,4 +415,18 @@ ul.list {
 			}
 		}
 	}
+}
+
+
+
+/* =========================
+ Patch for Jquery UI
+========================= */
+.ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year  {
+	width: 48%;
+}
+
+.ui-widget {
+	font-size: 93%;
+	line-height: 1;
 }

@@ -3,12 +3,42 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Web App Theme</title>
+	<link rel="stylesheet" href="stylesheets/jquery-ui-1.7.2.ui-darkness.css" type="text/css" media="screen" charset="utf-8">
 	<link rel="stylesheet" href="stylesheets/simple-theme.css" type="text/css" media="screen" />
+
 	<script type="text/javascript" charset="utf-8" src="javascripts/jquery-1.3.2.js"></script>
 	<script type="text/javascript" charset="utf-8" src="javascripts/jquery-ui-1.7.2.js"></script>
 	<script type="text/javascript" charset="utf-8" src="javascripts/jquery-ui-i18n-1.7.2.js"></script>
 	<script type="text/javascript" charset="utf-8" src="javascripts/jquery.corner-2.03.js"></script>
+	<script type="text/javascript" charset="utf-8" src="javascripts/jquery.timepicker-0.2.1.js"></script>
 	<script type="text/javascript" charset="utf-8" src="javascripts/simple-theme-ie-patch.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(function() {
+			$.datepicker.setDefaults($.datepicker.regional['zh-CN']);
+
+			$('.datepicker').datepicker({
+				changeMonth: true,
+				changeYear: true,
+				showButtonPanel: true,
+				duration: 0,
+				dateFormat: 'yy-mm-dd'
+			});
+			
+			$('.datetimepicker').datepicker({
+				changeMonth: true,
+				changeYear: true,
+				dateFormat: 'yy-mm-dd',
+				duration: 0,
+				showTime: true,
+				constrainInput: false,
+				// stepMinutes: 1,
+				// stepHours: 1,
+				time24h: true
+			});
+			$("#ui-timepicker-div table th:first").text("时");
+			$("#ui-timepicker-div table th:last").text("分");
+		});
+	</script>
 </head>
 <body class="sidebar">
 <div id="container">
@@ -273,9 +303,9 @@
 						<fieldset class="inputs"><legend><span>影片信息</span></legend><ol>
 
 							<li class="string required error" id="vod_program_title_input"><label for="vod_program_title">节目名称<abbr title="required">*</abbr></label><input id="vod_program_title" maxlength="100" name="vod_program[title]" size="50" type="text" /><p class="inline-errors">不能为空字符</p></li>
-							<li class="string optional" id="vod_program_player_input"><label for="vod_program_player">主演</label><input id="vod_program_player" maxlength="200" name="vod_program[player]" size="50" type="text" /><p class="inline-hints">刘嘉玲, 张曼玉</p></li>
-							<li class="string required" id="vod_program_director_input"><label for="vod_program_director">导演<abbr title="required">*</abbr></label><input id="vod_program_director" maxlength="200" name="vod_program[director]" size="50" type="text" /></li>
-							<li class="string optional" id="vod_program_company_input"><label for="vod_program_company">出品公司</label><input id="vod_program_company" maxlength="200" name="vod_program[company]" size="50" type="text" /></li>
+							<li class="string optional" id="vod_program_player_input"><label for="vod_program_player">主演</label><input id="vod_program_player" class="datepicker" maxlength="200" name="vod_program[player]" size="50" type="text" /><p class="inline-hints">刘嘉玲, 张曼玉</p></li>
+							<li class="string required" id="vod_program_director_input"><label for="vod_program_director">导演<abbr title="required">*</abbr></label><input class="datetimepicker" id="vod_program_director" maxlength="200" name="vod_program[director]" size="50" type="text" /></li>
+							<li class="string optional" id="vod_program_company_input"><label for="vod_program_company">出品公司</label><input id="vod_program_company" class="datetimepicker" maxlength="200" name="vod_program[company]" size="50" type="text" /></li>
 							<li class="string optional" id="vod_program_country_input"><label for="vod_program_country">出品国家</label><input id="vod_program_country" maxlength="100" name="vod_program[country]" size="50" type="text" /></li>
 							<li class="text optional" id="vod_program_summary_input"><label for="vod_program_summary">节目概要</label><textarea cols="40" id="vod_program_summary" name="vod_program[summary]" rows="20"></textarea><p class="inline-hints">在浩瀚的海洋世界，各种鲨鱼和鱼类有自己的喜怒哀乐，演绎着令人思索的故事。</p></li>
 

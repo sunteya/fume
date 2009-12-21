@@ -1,182 +1,96 @@
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+html {
+  color: #000000;
+  background: #ffffff;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
   margin: 0;
   padding: 0;
-  border: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-size: 100%;
-  font-family: inherit;
-  vertical-align: baseline;
 }
-body { line-height: 1.5; }
 table {
-  border-collapse: separate;
+  border-collapse: collapse;
   border-spacing: 0;
 }
-caption, th, td {
-  text-align: left;
+fieldset, img { border: 0; }
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style: normal;
   font-weight: normal;
 }
-table, td, th { vertical-align: middle; }
-blockquote:before { content: ""; }
-blockquote:after { content: ""; }
-q:before { content: ""; }
-q:after { content: ""; }
-blockquote, q { quotes: "" ""; }
-a img { border: none; }
-body {
-  font-size: 75%;
-  color: #222222;
-  background: #ffffff;
-  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-}
+li { list-style: none; }
+caption, th { text-align: left; }
 h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
-  color: #111111;
-}
-h1 {
-  font-size: 3em;
-  line-height: 1;
-  margin-bottom: 0.5em;
-}
-h2 {
-  font-size: 2em;
-  margin-bottom: 0.75em;
-}
-h3 {
-  font-size: 1.5em;
-  line-height: 1;
-  margin-bottom: 1em;
-}
-h4 {
-  font-size: 1.2em;
-  line-height: 1.25;
-  margin-bottom: 1.25em;
-}
-h5 {
-  font-size: 1em;
-  font-weight: bold;
-  margin-bottom: 1.5em;
-}
-h6 {
-  font-size: 1em;
-  font-weight: bold;
-}
-h1 img { margin: 0; }
-h2 img { margin: 0; }
-h3 img { margin: 0; }
-h4 img { margin: 0; }
-h5 img { margin: 0; }
-h6 img { margin: 0; }
-p { margin: 0 0 1.5em; }
-p img.left {
-  float: left;
-  margin: 1.5em 1.5em 1.5em 0;
-  padding: 0;
-}
-p img.right {
-  float: right;
-  margin: 1.5em 0 1.5em 1.5em;
-}
-a:focus { color: #000000; }
-a:hover { color: #000000; }
-a {
-  color: #000099;
-  text-decoration: underline;
-}
-blockquote {
-  margin: 1.5em;
-  color: #666666;
-  font-style: italic;
-}
-strong { font-weight: bold; }
-em, dfn { font-style: italic; }
-dfn { font-weight: bold; }
-sup, sub { line-height: 0; }
-abbr, acronym { border-bottom: 1px dotted #666666; }
-address {
-  margin: 0 0 1.5em;
-  font-style: italic;
-}
-del { color: #666666; }
-pre {
-  margin: 1.5em 0;
-  white-space: pre;
-}
-pre, code, tt {
-  font: 1em 'andale mono', 'lucida console', monospace;
-  line-height: 1.5;
-}
-li ul { margin: 0 1.5em; }
-li ol { margin: 0 1.5em; }
-ul, ol { margin: 0 1.5em 1.5em 1.5em; }
-ul { list-style-type: disc; }
-ol { list-style-type: decimal; }
-dl { margin: 0 0 1.5em 0; }
-dl dt { font-weight: bold; }
-dd { margin-left: 1.5em; }
-table {
-  margin-bottom: 1.4em;
-  width: 100%;
-}
-th { font-weight: bold; }
-thead th { background: #c3d9ff; }
-th, td, caption { padding: 4px 10px 4px 5px; }
-tr.even td { background: #e5ecf9; }
-tfoot { font-style: italic; }
-caption { background: #eeeeee; }
-.small {
-  font-size: 0.8em;
-  margin-bottom: 1.875em;
-  line-height: 1.875em;
-}
-.large {
-  font-size: 1.2em;
-  line-height: 2.5em;
-  margin-bottom: 1.25em;
-}
-.hide { display: none; }
-.quiet { color: #666666; }
-.loud { color: #000000; }
-.highlight { background: #ffff00; }
-.added {
-  background: #006600;
-  color: #ffffff;
-}
-.removed {
-  background: #990000;
-  color: #ffffff;
-}
-.first {
-  margin-left: 0;
-  padding-left: 0;
-}
-.last {
-  margin-right: 0;
-  padding-right: 0;
-}
-.top {
-  margin-top: 0;
-  padding-top: 0;
-}
-.bottom {
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-button, input, select, textarea {
-  font-weight: inherit;
-  font-style: inherit;
   font-size: 100%;
-  font-family: inherit;
-  vertical-align: baseline;
+  font-weight: normal;
 }
-h1, h2 { margin: 15px 0; }
-h3, h4 { margin: 10px 0; }
-hr {
-  height: 1px;
+q:before { content: ''; }
+q:after { content: ''; }
+abbr, acronym {
   border: 0;
+  font-variant: normal;
 }
-p { margin: 15px 0; }
+sup { vertical-align: text-top; }
+sub { vertical-align: text-bottom; }
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+input, textarea, select { *font-size: 100%; }
+legend { color: #000000; }
+body {
+  font: 13px/1.231 arial, helvetica, clean, sans-serif;
+  *font-size: small;
+  *font: x-small;
+}
+select, input, button, textarea { font: 99% arial, helvetica, clean, sans-serif; }
+table {
+  font-size: inherit;
+  font: 100%;
+}
+pre, code, kbd, samp, tt {
+  font-family: monospace;
+  *font-size: 108%;
+  line-height: 100%;
+}
+h1 { font-size: 138.5%; }
+h2 { font-size: 123.1%; }
+h3 { font-size: 108%; }
+h1, h2, h3 { margin: 1em 0; }
+h1, h2, h3, h4, h5, h6, strong { font-weight: bold; }
+abbr, acronym {
+  border-bottom: 1px dotted #000000;
+  cursor: help;
+}
+em { font-style: italic; }
+blockquote, ul, ol, dl { margin: 1em; }
+ol, ul, dl { margin-left: 2em; }
+ol li { list-style: decimal outside; }
+ul li { list-style: disc outside; }
+dl dd { margin-left: 1em; }
+th, td {
+  border: 1px solid #000000;
+  padding: 0.5em;
+}
+th {
+  font-weight: bold;
+  text-align: center;
+}
+caption {
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+p, fieldset, table, pre { margin-bottom: 1em; }
+input[type=text], input[type=password], textarea {
+  width: 12.25em;
+  *width: 11.9em;
+}
+ol li { list-style: none; }
+ul li { list-style: none; }
+th, td { border: none; }
+input[type=text], input[type=password], textarea { width: auto; }
+body {
+  line-height: 1;
+  font-size: 13px;
+}
 .clear { clear: both; }
 #container { min-width: 1050px; }
 #header, #page { margin: 0 40px; }
@@ -523,6 +437,12 @@ ul.list li .item .avatar {
   margin: 0 5px 5px 0;
   width: 30px;
   height: 30px;
+}
+.ui-datepicker select.ui-datepicker-month { width: 48%; }
+.ui-datepicker select.ui-datepicker-year { width: 48%; }
+.ui-widget {
+  font-size: 93%;
+  line-height: 1;
 }
 #color_schemes {
   nav: #ffffff;
