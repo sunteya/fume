@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{fume}
-  s.version = "0.2.1"
+  s.version = "0.2.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Sunteya"]
-  s.date = %q{2009-12-18}
+  s.date = %q{2009-12-21}
   s.email = %q{Sunteya@gmail.com}
   s.extra_rdoc_files = [
     "README"
@@ -43,42 +43,19 @@ Gem::Specification.new do |s|
      "generators/fume/simple_theme/templates/public/javascripts/jquery-1.3.2.js",
      "generators/fume/simple_theme/templates/public/javascripts/jquery-ui-1.7.2.js",
      "generators/fume/simple_theme/templates/public/javascripts/jquery-ui-i18n-1.7.2.js",
-     "generators/fume/simple_theme/templates/public/stylesheets/base.less",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/ie.css",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/plugins/buttons/icons/cross.png",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/plugins/buttons/icons/key.png",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/plugins/buttons/icons/tick.png",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/plugins/buttons/readme.txt",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/plugins/buttons/screen.css",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/plugins/fancy-type/readme.txt",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/plugins/fancy-type/screen.css",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/plugins/link-icons/icons/doc.png",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/plugins/link-icons/icons/email.png",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/plugins/link-icons/icons/external.png",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/plugins/link-icons/icons/feed.png",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/plugins/link-icons/icons/im.png",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/plugins/link-icons/icons/pdf.png",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/plugins/link-icons/icons/visited.png",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/plugins/link-icons/icons/xls.png",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/plugins/link-icons/readme.txt",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/plugins/link-icons/screen.css",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/plugins/rtl/readme.txt",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/plugins/rtl/screen.css",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/print.css",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/screen.css",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/src/forms.css",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/src/grid.css",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/src/grid.png",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/src/ie.css",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/src/print.css",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/src/reset.css",
-     "generators/fume/simple_theme/templates/public/stylesheets/blueprint-0.9.1/src/typography.css",
-     "generators/fume/simple_theme/templates/public/stylesheets/drastic-dark.less",
-     "generators/fume/simple_theme/templates/public/stylesheets/ie_patch.less",
+     "generators/fume/simple_theme/templates/public/javascripts/jquery.corner-2.03.js",
+     "generators/fume/simple_theme/templates/public/javascripts/jquery.timepicker-0.2.1.js",
+     "generators/fume/simple_theme/templates/public/javascripts/simple-theme-ie-patch.js",
      "generators/fume/simple_theme/templates/public/stylesheets/jquery-ui-1.7.2.ui-darkness.css",
-     "generators/fume/simple_theme/templates/public/stylesheets/layout.less",
      "generators/fume/simple_theme/templates/public/stylesheets/simple-theme.css",
      "generators/fume/simple_theme/templates/public/stylesheets/simple-theme.less",
+     "generators/fume/simple_theme/templates/public/stylesheets/src/base.less",
+     "generators/fume/simple_theme/templates/public/stylesheets/src/function.less",
+     "generators/fume/simple_theme/templates/public/stylesheets/src/layout.less",
+     "generators/fume/simple_theme/templates/public/stylesheets/src/reset.less",
+     "generators/fume/simple_theme/templates/public/stylesheets/src/vendor/yui-3.0/base.css",
+     "generators/fume/simple_theme/templates/public/stylesheets/src/vendor/yui-3.0/fonts.css",
+     "generators/fume/simple_theme/templates/public/stylesheets/src/vendor/yui-3.0/reset.css",
      "init.rb",
      "lib/fume.rb",
      "lib/fume/authlogic.rb",
