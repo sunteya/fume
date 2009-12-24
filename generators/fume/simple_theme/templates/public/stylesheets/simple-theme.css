@@ -617,7 +617,10 @@ body {
   display: block;
   padding-bottom: 0.2em;
 }
-.formtastic ol .string input { display: inline; }
+.formtastic ol .string input {
+  display: inline;
+  padding: 0.1em 0.2em;
+}
 .formtastic ol .string .inline-hints {
   margin: 0 0 0 1em;
   font-style: italic;
@@ -630,7 +633,10 @@ body {
   display: block;
   padding-bottom: 0.2em;
 }
-.formtastic ol .select input { display: inline; }
+.formtastic ol .select input {
+  display: inline;
+  padding: 0.1em 0.2em;
+}
 .formtastic ol .select .inline-hints {
   margin: 0 0 0 1em;
   font-style: italic;
@@ -643,7 +649,10 @@ body {
   display: block;
   padding-bottom: 0.2em;
 }
-.formtastic ol .text input { display: inline; }
+.formtastic ol .text input {
+  display: inline;
+  padding: 0.1em 0.2em;
+}
 .formtastic ol .text .inline-hints {
   margin: 0 0 0 1em;
   font-style: italic;
@@ -656,7 +665,10 @@ body {
   display: block;
   padding-bottom: 0.2em;
 }
-.formtastic ol .numeric input { display: inline; }
+.formtastic ol .numeric input {
+  display: inline;
+  padding: 0.1em 0.2em;
+}
 .formtastic ol .numeric .inline-hints {
   margin: 0 0 0 1em;
   font-style: italic;
@@ -669,7 +681,10 @@ body {
   display: block;
   padding-bottom: 0.2em;
 }
-.formtastic ol .file input { display: inline; }
+.formtastic ol .file input {
+  display: inline;
+  padding: 0.1em 0.2em;
+}
 .formtastic ol .file .inline-hints {
   margin: 0 0 0 1em;
   font-style: italic;
@@ -682,13 +697,33 @@ body {
   display: block;
   padding-bottom: 0.2em;
 }
-.formtastic ol .password input { display: inline; }
+.formtastic ol .password input {
+  display: inline;
+  padding: 0.1em 0.2em;
+}
 .formtastic ol .password .inline-hints {
   margin: 0 0 0 1em;
   font-style: italic;
   display: inline;
   color: #888888;
 }
+.formtastic ol .boolean label {
+  font-size: 1.2em;
+  color: #666666;
+  display: block;
+  padding-bottom: 0.2em;
+}
+.formtastic ol .boolean input {
+  display: inline;
+  padding: 0.1em 0.2em;
+}
+.formtastic ol .boolean .inline-hints {
+  margin: 0 0 0 1em;
+  font-style: italic;
+  display: inline;
+  color: #888888;
+}
+.formtastic ol .boolean label input { margin-right: 0.5em; }
 .formtastic ol .check_boxes fieldset .label label { font-size: 1.2em; }
 .formtastic ol .check_boxes fieldset ol li {
   float: left;
@@ -727,6 +762,25 @@ body {
 }
 .formtastic fieldset.buttons ol .commit input:hover { border: 1px solid #666666; }
 .formtastic fieldset.buttons ol .cancel a { color: #cc0000; }
+.sidebar-block .formtastic { margin-right: 1em; }
+.sidebar-block .formtastic .string input { width: 100%; }
+.sidebar-block .formtastic .select input { width: 100%; }
+.sidebar-block .formtastic .text input { width: 100%; }
+.sidebar-block .formtastic .numeric input { width: 100%; }
+.sidebar-block .formtastic .file input { width: 100%; }
+.sidebar-block .formtastic .password input { width: 100%; }
+.sidebar-block .formtastic .boolean input { width: 100%; }
+.sidebar-block .formtastic fieldset.inputs {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar-block .formtastic fieldset.buttons {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar-block .formtastic fieldset.buttons li { margin-bottom: 0; }
 .form label.label { color: #666666; }
 .form input.text_field { border: 1px solid #cfcfcf; }
 .form textarea.text_area { border: 1px solid #cfcfcf; }

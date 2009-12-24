@@ -303,7 +303,7 @@ body {
 		}
 
 		
-		.string, .select, .text, .numeric, .file, .password {
+		.string, .select, .text, .numeric, .file, .password, .boolean {
 			
 			label {
 				font-size: 1.2em;
@@ -314,6 +314,7 @@ body {
 			
 			input {
 				display: inline;
+				padding: 0.1em 0.2em;
 			}
 			
 			.inline-hints {
@@ -321,6 +322,14 @@ body {
 				font-style: italic;
 				display: inline;
 				color: #888;
+			}
+		}
+		
+		.boolean {
+			label {
+				input {
+					margin-right: 0.5em;
+				}
 			}
 		}
 		
@@ -390,6 +399,33 @@ body {
 		}
 	}
 }
+
+.sidebar-block .formtastic {
+	margin-right: 1em;
+	
+	.string, .select, .text, .numeric, .file, .password, .boolean {
+		input {
+			width: 100%;
+		}
+	}
+	
+	fieldset.inputs {
+		border: none;
+		padding: 0;
+		margin: 0;
+	}
+	
+	fieldset.buttons {
+		border: none;
+		padding: 0;
+		margin: 0;
+		
+		li {
+			margin-bottom: 0;
+		}
+	}
+}
+
 
 /* forms */
 .form {
