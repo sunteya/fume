@@ -19,5 +19,3 @@ module Fume
   end
 end
 
-
-Fume::RailsExt.enable

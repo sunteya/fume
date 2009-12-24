@@ -2,6 +2,7 @@ require 'fume/authlogic'
 require 'fume/searchlogic'
 require 'fume/simple_theme'
 require 'fume/rails_ext'
+require 'fume/formtastic'
 
 module Fume
   def self.root

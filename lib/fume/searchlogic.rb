@@ -2,8 +2,10 @@ module Fume
   module Searchlogic
 
     def self.enable
-      ActionController::Base.send :helper, RailsHelpers
-      ::Searchlogic::Search.send :include, SearchExtensions::InstanceMethods
+      if defined? ::Searchlogic
+        ActionController::Base.send :helper, RailsHelpers
+        ::Searchlogic::Search.send :include, SearchExtensions::InstanceMethods
+      end
     end
 
     module SearchExtensions
@@ -24,5 +26,3 @@ module Fume
   end
 end
 
-
-Fume::Searchlogic.enable if defined? ::Searchlogic

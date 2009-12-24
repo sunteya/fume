@@ -9,7 +9,6 @@ begin
     gem.email = "Sunteya@gmail.com"
     gem.homepage = "http://github.com/sunteya/fume"
     gem.authors = ["Sunteya"]
-    gem.add_development_dependency "authlogic"
   end
   
   Jeweler::GemcutterTasks.new
