@@ -9,9 +9,21 @@ module Fume
     end
 
     module SearchExtensions
+      module ClassMethods
+        def human_name
+          "Search"
+        end
+      end
+      
       module InstanceMethods
+        extend ClassMethods
+        
         def human_attribute_name(name)
           klass.human_attribute_name(name)
+        end
+        
+        def new_record?
+          true
         end
       end
     end
