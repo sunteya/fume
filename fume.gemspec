@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{fume}
-  s.version = "0.2.4"
+  s.version = "0.2.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Sunteya"]
-  s.date = %q{2009-12-21}
+  s.date = %q{2009-12-24}
   s.email = %q{Sunteya@gmail.com}
   s.extra_rdoc_files = [
     "README"
@@ -56,9 +56,9 @@ Gem::Specification.new do |s|
      "generators/fume/simple_theme/templates/public/stylesheets/src/vendor/yui-3.0/base.css",
      "generators/fume/simple_theme/templates/public/stylesheets/src/vendor/yui-3.0/fonts.css",
      "generators/fume/simple_theme/templates/public/stylesheets/src/vendor/yui-3.0/reset.css",
-     "init.rb",
      "lib/fume.rb",
      "lib/fume/authlogic.rb",
+     "lib/fume/formtastic.rb",
      "lib/fume/rails_ext.rb",
      "lib/fume/searchlogic.rb",
      "lib/fume/simple_theme.rb",
@@ -75,12 +75,9 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
-      s.add_development_dependency(%q<authlogic>, [">= 0"])
     else
-      s.add_dependency(%q<authlogic>, [">= 0"])
     end
   else
-    s.add_dependency(%q<authlogic>, [">= 0"])
   end
 end
 
