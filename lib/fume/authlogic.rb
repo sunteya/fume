@@ -26,3 +26,6 @@ module Fume
     end
   end
 end
+
+
+Fume::Authlogic.enable if defined? ::Authlogic

@@ -49,3 +49,6 @@ module Fume
     end
   end
 end
+
+
+Fume::SimpleTheme.enable

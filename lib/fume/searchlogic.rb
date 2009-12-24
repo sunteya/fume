@@ -23,3 +23,6 @@ module Fume
     end
   end
 end
+
+
+Fume::Searchlogic.enable if defined? ::Searchlogic
