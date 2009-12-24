@@ -5,6 +5,7 @@ module Fume
       if defined? ::Searchlogic
         ActionController::Base.send :helper, RailsHelpers
         ::Searchlogic::Search.send :include, SearchExtensions::InstanceMethods
+        ::Searchlogic::Search.send :extend, SearchExtensions::ClassMethods
       end
     end
 
@@ -16,8 +17,7 @@ module Fume
       end
       
       module InstanceMethods
-        extend ClassMethods
-        
+
         def human_attribute_name(name)
           klass.human_attribute_name(name)
         end
