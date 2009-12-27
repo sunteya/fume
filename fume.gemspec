@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{fume}
-  s.version = "0.2.6"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Sunteya"]
-  s.date = %q{2009-12-24}
+  s.date = %q{2009-12-28}
   s.email = %q{Sunteya@gmail.com}
   s.extra_rdoc_files = [
     "README"
@@ -24,6 +24,8 @@ Gem::Specification.new do |s|
      "generators/fume/capify/templates/Capfile",
      "generators/fume/capify/templates/config/deploy.rb",
      "generators/fume/fume_generator.rb",
+     "generators/fume/rspec/rspec_gen.rb",
+     "generators/fume/rspec/templates/spec/support/fume_controller_macros.rb",
      "generators/fume/simple_theme/simple_theme_gen.rb",
      "generators/fume/simple_theme/templates/public/demo.html",
      "generators/fume/simple_theme/templates/public/images/jquery-ui-1.7.2.ui-darkness/ui-bg_flat_30_cccccc_40x100.png",
@@ -43,6 +45,7 @@ Gem::Specification.new do |s|
      "generators/fume/simple_theme/templates/public/javascripts/jquery-1.3.2.js",
      "generators/fume/simple_theme/templates/public/javascripts/jquery-ui-1.7.2.js",
      "generators/fume/simple_theme/templates/public/javascripts/jquery-ui-i18n-1.7.2.js",
+     "generators/fume/simple_theme/templates/public/javascripts/jquery.ba-url-1.11.js",
      "generators/fume/simple_theme/templates/public/javascripts/jquery.corner-2.03.js",
      "generators/fume/simple_theme/templates/public/javascripts/jquery.timepicker-0.2.1.js",
      "generators/fume/simple_theme/templates/public/javascripts/simple-theme-ie-patch.js",
