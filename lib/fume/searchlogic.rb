@@ -1,7 +1,7 @@
 module Fume
   module Searchlogic
 
-    def self.enable
+    def self.try_enable
       if defined? ::Searchlogic
         ActionController::Base.send :helper, RailsHelpers
         ::Searchlogic::Search.send :include, SearchExtensions::InstanceMethods

@@ -1,7 +1,7 @@
 module Fume
   module SimpleTheme
     
-    def self.enable
+    def self.try_enable
       ActionController::Base.send :extend, ControllerExtensions::ClassMethods
       ActionController::Base.send :helper, RailsHelpers
     end

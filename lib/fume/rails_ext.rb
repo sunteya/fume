@@ -1,7 +1,7 @@
 module Fume
   module RailsExt
     
-    def self.enable
+    def self.try_enable
       ActionController::Base.send :helper, RailsHelpers
     end
     

@@ -1,7 +1,7 @@
 module Fume
   module Formtastic
     
-    def self.enable
+    def self.try_enable
       return unless defined? ::Formtastic
       
       ::Formtastic::SemanticFormBuilder.class_exec do

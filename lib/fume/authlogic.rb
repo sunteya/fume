@@ -1,6 +1,6 @@
 module Fume
   module Authlogic
-    def self.enable
+    def self.try_enable
       if defined? ::Authlogic
         ActionController::Base.send :include, ControllerExtensions::InstanceMethods
         ActionController::Base.send :helper_method, :current_user_session, :current_user
