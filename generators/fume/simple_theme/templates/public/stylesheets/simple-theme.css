@@ -294,12 +294,12 @@ body {
   font-weight: bold;
   text-align: left;
 }
-.table th.first {
+.table th:first-child {
   border-top-left-radius: 0.4em;
   -moz-border-radius-topleft: 0.4em;
   -webkit-border-top-left-radius: 0.4em;
 }
-.table th.last {
+.table th:last-child {
   border-top-right-radius: 0.4em;
   -moz-border-radius-topright: 0.4em;
   -webkit-border-top-right-radius: 0.4em;
@@ -610,6 +610,7 @@ body {
   color: red;
   margin: 0;
   font-size: 1.1em;
+  margin-top: 0.2em;
 }
 .formtastic ol .string label {
   font-size: 1.2em;
@@ -724,6 +725,7 @@ body {
   color: #888888;
 }
 .formtastic ol .boolean label input { margin-right: 0.5em; }
+.formtastic ol .check_boxes fieldset .label { padding-bottom: 0.2em; }
 .formtastic ol .check_boxes fieldset .label label { font-size: 1.2em; }
 .formtastic ol .check_boxes fieldset ol li {
   float: left;
