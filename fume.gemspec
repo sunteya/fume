@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{fume}
-  s.version = "0.3.0"
+  s.version = "0.3.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Sunteya"]
-  s.date = %q{2009-12-28}
+  s.date = %q{2010-01-11}
   s.email = %q{Sunteya@gmail.com}
   s.extra_rdoc_files = [
     "README"
@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
      "generators/fume/capify/templates/config/deploy.rb",
      "generators/fume/fume_generator.rb",
      "generators/fume/rspec/rspec_gen.rb",
+     "generators/fume/rspec/templates/spec/support/erb_macros.rb",
      "generators/fume/rspec/templates/spec/support/fume_controller_macros.rb",
      "generators/fume/simple_theme/simple_theme_gen.rb",
      "generators/fume/simple_theme/templates/public/demo.html",
