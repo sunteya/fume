@@ -24,21 +24,28 @@ module FumeControllerMacros
       end
     end
     
+    
     %w{ be_success be_redirect be_invalid }.each do |be_method|
-      define_method "it_should_#{be_method}_for" do |action_methods, &block|
+      eval %Q[
+      def it_should_#{be_method}_for(*args, &block)
+        options = args.extract_options!() || {}
+        action_methods = args.flatten
         action_methods.each do |action_method|
-          it "should #{be_method} for #{action_method.method} :#{action_method.action} action" do
+          it "should #{be_method} for \#{action_method.method} :\#{action_method.action} action \#{options[:message]}" do
+            params = {}
             if block_given?
               result = self.instance_exec(&block)
               params = result if result.is_a? Hash
-    
-              self.instance_exec(params, &action_method)
-              response.should send(be_method)
             end
+
+            self.instance_exec(params, &action_method)
+            response.should #{be_method}
           end
         end
       end
+      ]
     end
+    
     
     def it_should_be_like_restful_resources(options = {}, &block)
       actions = [ :index, :new, :create, :show, :edit, :update, :destroy ]
@@ -47,6 +54,12 @@ module FumeControllerMacros
 
       if actions.include?(:index)
         it_should_be_success_for get(:index) do
+          params = instance_exec(&block)
+        end
+      end
+      
+      if actions.include?(:show)
+        it_should_be_success_for get(:show) do
           params = instance_exec(&block)
         end
       end
