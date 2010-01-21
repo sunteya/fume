@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{fume}
-  s.version = "0.3.1"
+  s.version = "0.3.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Sunteya"]
-  s.date = %q{2010-01-11}
+  s.date = %q{2010-01-21}
   s.email = %q{Sunteya@gmail.com}
   s.extra_rdoc_files = [
     "README"
@@ -66,13 +66,21 @@ Gem::Specification.new do |s|
      "lib/fume/rails_ext.rb",
      "lib/fume/searchlogic.rb",
      "lib/fume/simple_theme.rb",
-     "rails/init.rb"
+     "lib/fume/smart_logger.rb",
+     "rails/init.rb",
+     "spec/smart_logger_spec.rb",
+     "spec/spec.opts",
+     "spec/spec_helper.rb"
   ]
   s.homepage = %q{http://github.com/sunteya/fume}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
   s.summary = %q{a simple rails scaffold.}
+  s.test_files = [
+    "spec/smart_logger_spec.rb",
+     "spec/spec_helper.rb"
+  ]
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
