@@ -1,11 +1,5 @@
 require "spec_helper"
 
-module Rails
-  class << self
-    attr_accessor :env
-  end
-end
-
 describe Fume::SmartLogger do
   before(:each) do
     @logger = Logger.new(STDOUT)

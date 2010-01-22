@@ -2,8 +2,7 @@
 # require 'spec'
 
 require File.join(File.dirname(__FILE__), '..', 'lib', 'fume')
-
-
+require "rails_stub"
 
 include Fume
 
