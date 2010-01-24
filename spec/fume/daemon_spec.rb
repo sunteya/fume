@@ -3,6 +3,8 @@ require "spec_helper"
 describe Fume::Daemon do
   class TestDaemon
     include Fume::Daemon
+    include Fume::LoggerSupport
+    
     attr_writer :callback
     
     def callback(&block)
@@ -15,7 +17,7 @@ describe Fume::Daemon do
     
     def execute
       callback.call if callback
-      sleep 0.1
+      sleep 0.05
     end
   end
   
@@ -57,11 +59,13 @@ describe Fume::Daemon do
   
   def build_and_start_test_daemon
     Thread.new do 
-      sleep 0.5
+      sleep 0.2
       Process.kill("INT", $$)
     end
     
     daemon = TestDaemon.new
+    daemon.logger.level = Logger::ERROR
+    
     yield(daemon) if block_given?
     daemon.start
   end

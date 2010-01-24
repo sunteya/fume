@@ -4,12 +4,18 @@ module Fume
     def self.try_enable
       if defined? ::Searchlogic
         ActionController::Base.send :helper, RailsHelpers
-        ::Searchlogic::Search.send :include, SearchExtensions::InstanceMethods
-        ::Searchlogic::Search.send :extend, SearchExtensions::ClassMethods
+        ::Searchlogic::Search.send :include, SearchExtensions
       end
     end
 
     module SearchExtensions
+      def self.included(base)
+        base.instance_eval do
+          include InstanceMethods
+          extend ClassMethods
+        end
+      end
+      
       module ClassMethods
         def human_name
           "Search"

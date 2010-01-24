@@ -4,6 +4,7 @@ require 'fume/simple_theme'
 require 'fume/rails_ext'
 require 'fume/formtastic'
 require 'fume/smart_logger'
+require 'fume/logger_support'
 require 'fume/daemon'
 
 # module Fume
