@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{fume}
-  s.version = "0.3.2"
+  s.version = "0.3.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Sunteya"]
-  s.date = %q{2010-01-21}
+  s.date = %q{2010-01-25}
   s.email = %q{Sunteya@gmail.com}
   s.extra_rdoc_files = [
     "README"
@@ -62,13 +62,18 @@ Gem::Specification.new do |s|
      "generators/fume/simple_theme/templates/public/stylesheets/src/vendor/yui-3.0/reset.css",
      "lib/fume.rb",
      "lib/fume/authlogic.rb",
+     "lib/fume/daemon.rb",
      "lib/fume/formtastic.rb",
+     "lib/fume/logger_support.rb",
      "lib/fume/rails_ext.rb",
      "lib/fume/searchlogic.rb",
      "lib/fume/simple_theme.rb",
      "lib/fume/smart_logger.rb",
      "rails/init.rb",
-     "spec/smart_logger_spec.rb",
+     "spec/fume/daemon_spec.rb",
+     "spec/fume/logger_support_spec.rb",
+     "spec/fume/smart_logger_spec.rb",
+     "spec/rails_stub.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb"
   ]
@@ -78,7 +83,10 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.5}
   s.summary = %q{a simple rails scaffold.}
   s.test_files = [
-    "spec/smart_logger_spec.rb",
+    "spec/fume/daemon_spec.rb",
+     "spec/fume/logger_support_spec.rb",
+     "spec/fume/smart_logger_spec.rb",
+     "spec/rails_stub.rb",
      "spec/spec_helper.rb"
   ]
 
