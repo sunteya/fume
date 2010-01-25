@@ -3,7 +3,6 @@ require "spec_helper"
 describe Fume::Daemon do
   class TestDaemon
     include Fume::Daemon
-    include Fume::LoggerSupport
     
     attr_writer :callback
     
@@ -57,16 +56,33 @@ describe Fume::Daemon do
     end
   end
   
+  it "should be catch exception" do
+    daemon = build_and_start_test_daemon do |d|
+      d.callback { raise "exception" }
+    end
+    
+    File.exists?(daemon.pid_file_path).should be_false
+  end
+  
+  it "should be exit if pid file exists" do
+    build_and_start_test_daemon do |d|
+      d.pid_file_path = @pid_path
+      d.write_pid_file(Process.pid)
+      d.callback { fail("MUST exit at start") }
+    end
+  end
+  
   def build_and_start_test_daemon
     Thread.new do 
-      sleep 0.2
+      sleep 0.5
       Process.kill("INT", $$)
     end
     
     daemon = TestDaemon.new
-    daemon.logger.level = Logger::ERROR
-    
+    daemon.logger.level = Logger::FATAL
     yield(daemon) if block_given?
+    
     daemon.start
+    daemon
   end
 end
