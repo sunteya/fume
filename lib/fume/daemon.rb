@@ -60,21 +60,22 @@ module Fume
 
       def start
         return if already_running?
+        begin
+          register_trap
+          write_pid_file(Process.pid)
+          logger.info { "Daemon: #{daemon_name} starting ... PID: #{Process.pid}" }
         
-        register_trap
-        write_pid_file(Process.pid)
-        logger.info { "Daemon: #{daemon_name} starting ... PID: #{Process.pid}" }
-        
-        @run = true
+          @run = true
 
-        while @run
-          self.execute
+          while @run
+            self.execute
+          end
+          logger.info { "Daemon: #{daemon_name} stoped ..." }
+        rescue Exception => e
+          logger.error(e)
+        ensure
+          remove_pid_file
         end
-        logger.info { "Daemon: #{daemon_name} stoped ..." }
-      rescue Exception => e
-        logger.error(e)
-      ensure
-        remove_pid_file
       end
 
       def stop

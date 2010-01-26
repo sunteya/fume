@@ -1,4 +1,5 @@
 require "spec_helper"
+require "fileutils"
 
 describe Fume::Daemon do
   class TestDaemon
@@ -23,6 +24,7 @@ describe Fume::Daemon do
   before(:each) do
     ENV["PID_FILE"] = nil
     @pid_path = Rails.root.join("tmp", "pids", "test.pid").to_s
+    FileUtils.rm(@pid_path, :force => true)
   end
   
   it "should be create pid file by path" do
@@ -70,6 +72,7 @@ describe Fume::Daemon do
       d.write_pid_file(Process.pid)
       d.callback { fail("MUST exit at start") }
     end
+    File.exists?(@pid_path).should be_true
   end
   
   def build_and_start_test_daemon
