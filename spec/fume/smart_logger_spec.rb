@@ -7,12 +7,16 @@ describe Fume::SmartLogger do
   
   it "should be create STDOUT logger" do
     Logger.should_receive(:new).with(STDOUT).and_return(@logger)
-    SmartLogger.create("STDOUT").should be_eql @logger
+    result = SmartLogger.create("STDOUT")
+    result.should be_eql @logger
+    result.level.should be_eql Logger::DEBUG
   end
   
   it "should be create log file logger" do
     Logger.should_receive(:new).with(Rails.root.join("log", "file.log")).and_return(@logger)
-    SmartLogger.create("file").should be_eql @logger
+    result = SmartLogger.create("file", Logger::INFO)
+    result.should be_eql @logger
+    result.level.should be_eql Logger::INFO
   end
   
   it "should be create log file logger with ext" do
