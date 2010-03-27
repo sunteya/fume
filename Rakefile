@@ -1,22 +1,7 @@
-require 'rubygems'
-require 'rake'
+require File.expand_path("../depends.rb", __FILE__)
+GemLoader.require(:rakefile)
 
-begin
-  require 'jeweler'
-  Jeweler::Tasks.new do |gem|
-    gem.name = "fume"
-    gem.summary = "a simple rails scaffold."
-    gem.email = "Sunteya@gmail.com"
-    gem.homepage = "http://github.com/sunteya/fume"
-    gem.authors = ["Sunteya"]
-  end
-  
-  Jeweler::GemcutterTasks.new
-rescue LoadError
-  puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
-end
 
-require 'spec/rake/spectask'
 Spec::Rake::SpecTask.new(:spec) do |spec|
   spec.libs << 'lib' << 'spec'
   spec.spec_opts = ['--options', "spec/spec.opts"]
@@ -28,6 +13,18 @@ Spec::Rake::SpecTask.new(:rcov) do |spec|
   spec.pattern = 'spec/**/*_spec.rb'
   spec.rcov = true
 end
+
+
+Jeweler::Tasks.new do |spec|
+  spec.name = "fume"
+  spec.summary = "a simple rails scaffold."
+  spec.email = "Sunteya@gmail.com"
+  spec.homepage = "http://github.com/sunteya/fume"
+  spec.authors = ["Sunteya"]
+  GemLoader.gemspec.integrate(spec)
+end
+Jeweler::GemcutterTasks.new
+
 
 task :spec => :check_dependencies
 task :default => :spec

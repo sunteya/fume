@@ -1,3 +1,6 @@
+require File.expand_path("../../depends.rb", __FILE__)
+GemLoader.require(:runtime)
+
 require 'fume/authlogic'
 require 'fume/searchlogic'
 require 'fume/simple_theme'
