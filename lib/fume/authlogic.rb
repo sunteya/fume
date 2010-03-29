@@ -20,10 +20,6 @@ module Fume
           return @current_user if defined?(@current_user)
           @current_user = current_user_session && current_user_session.user
         end
-
-        def redirect_to_ok_url_or_default(default)
-          redirect_to params[:ok_url] || default
-        end
       end
     end
   end
