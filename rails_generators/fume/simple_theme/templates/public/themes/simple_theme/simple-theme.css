@@ -438,8 +438,8 @@ ul.list li .item .avatar {
   width: 30px;
   height: 30px;
 }
-.ui-datepicker select.ui-datepicker-month { width: 48%; }
-.ui-datepicker select.ui-datepicker-year { width: 48%; }
+.ui-datepicker select.ui-datepicker-month { width: 45%; }
+.ui-datepicker select.ui-datepicker-year { width: 45%; }
 .ui-widget {
   font-size: 93%;
   line-height: 1;
