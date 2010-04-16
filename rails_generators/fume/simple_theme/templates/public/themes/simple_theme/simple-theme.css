@@ -438,8 +438,8 @@ ul.list li .item .avatar {
   width: 30px;
   height: 30px;
 }
-.ui-datepicker select.ui-datepicker-month { width: 45%; }
-.ui-datepicker select.ui-datepicker-year { width: 45%; }
+.ui-datepicker select.ui-datepicker-month { width: 46%; }
+.ui-datepicker select.ui-datepicker-year { width: 46%; }
 .ui-widget {
   font-size: 93%;
   line-height: 1;
@@ -459,7 +459,10 @@ body {
   font-family: helvetica, arial, sans-serif;
 }
 #header_wrapper { background: #36393d; }
-#header h1 { font-weight: bold; }
+#header h1 {
+  font-weight: bold;
+  color: #ffffff;
+}
 #header h1 a { color: #ffffff; }
 #main .block .content { background: #ffffff; }
 #main .block .content h2 { font-weight: bold; }
