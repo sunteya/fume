@@ -12,7 +12,7 @@ GemLoader.setup do
   scope :optional do
     gem "authlogic", ">= 2.1.3"
     gem "searchlogic", ">= 2.4.12"
-    gem "formtastic", ">= 0.9.7"
+    gem "formtastic", ">= 0.9.8"
   end
   
   scope :test do
