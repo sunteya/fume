@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{fume}
-  s.version = "0.5.1"
+  s.version = "0.5.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Sunteya"]
-  s.date = %q{2010-04-15}
+  s.date = %q{2010-04-21}
   s.email = %q{Sunteya@gmail.com}
   s.extra_rdoc_files = [
     "README"
@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "fume.gemspec",
      "lib/fume.rb",
      "lib/fume/authlogic.rb",
+     "lib/fume/cancan.rb",
      "lib/fume/daemon.rb",
      "lib/fume/formtastic.rb",
      "lib/fume/logger_support.rb",
@@ -70,6 +71,7 @@ Gem::Specification.new do |s|
      "rails_generators/fume/simple_theme/templates/public/themes/vendor/jquery.ba-bbq-1.2.1.js",
      "rails_generators/fume/simple_theme/templates/public/themes/vendor/jquery.corner-2.09.js",
      "rails_generators/fume/simple_theme/templates/public/themes/vendor/jquery.timepicker-0.2.1.js",
+     "spec/fume/cancan_spec.rb",
      "spec/fume/daemon_spec.rb",
      "spec/fume/logger_support_spec.rb",
      "spec/fume/smart_logger_spec.rb",
@@ -83,7 +85,8 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.6}
   s.summary = %q{a simple rails scaffold.}
   s.test_files = [
-    "spec/fume/daemon_spec.rb",
+    "spec/fume/cancan_spec.rb",
+     "spec/fume/daemon_spec.rb",
      "spec/fume/logger_support_spec.rb",
      "spec/fume/smart_logger_spec.rb",
      "spec/rails_stub.rb",
@@ -99,14 +102,16 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<actionpack>, ["~> 2.3.5"])
       s.add_development_dependency(%q<authlogic>, [">= 2.1.3"])
       s.add_development_dependency(%q<searchlogic>, [">= 2.4.12"])
-      s.add_development_dependency(%q<formtastic>, [">= 0.9.7"])
+      s.add_development_dependency(%q<formtastic>, [">= 0.9.8"])
+      s.add_development_dependency(%q<cancan>, [">= 1.1.1"])
       s.add_development_dependency(%q<rspec>, [">= 1.3.0"])
     else
       s.add_dependency(%q<gem_loader>, [">= 0.2.0"])
       s.add_dependency(%q<actionpack>, ["~> 2.3.5"])
       s.add_dependency(%q<authlogic>, [">= 2.1.3"])
       s.add_dependency(%q<searchlogic>, [">= 2.4.12"])
-      s.add_dependency(%q<formtastic>, [">= 0.9.7"])
+      s.add_dependency(%q<formtastic>, [">= 0.9.8"])
+      s.add_dependency(%q<cancan>, [">= 1.1.1"])
       s.add_dependency(%q<rspec>, [">= 1.3.0"])
     end
   else
@@ -114,7 +119,8 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<actionpack>, ["~> 2.3.5"])
     s.add_dependency(%q<authlogic>, [">= 2.1.3"])
     s.add_dependency(%q<searchlogic>, [">= 2.4.12"])
-    s.add_dependency(%q<formtastic>, [">= 0.9.7"])
+    s.add_dependency(%q<formtastic>, [">= 0.9.8"])
+    s.add_dependency(%q<cancan>, [">= 1.1.1"])
     s.add_dependency(%q<rspec>, [">= 1.3.0"])
   end
 end
