@@ -13,6 +13,7 @@ GemLoader.setup do
     gem "authlogic", ">= 2.1.3"
     gem "searchlogic", ">= 2.4.12"
     gem "formtastic", ">= 0.9.8"
+    gem "cancan", ">= 1.1.1"
   end
   
   scope :test do

@@ -9,6 +9,7 @@ require 'fume/formtastic'
 require 'fume/smart_logger'
 require 'fume/logger_support'
 require 'fume/daemon'
+require 'fume/cancan'
 
 # module Fume
 #   def self.root
