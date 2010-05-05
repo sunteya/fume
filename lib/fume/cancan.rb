@@ -23,7 +23,7 @@ module Fume
         protected
         def authorize_namespace
           options = self.class.read_inheritable_attribute(:authorize_namespace)
-          unauthorized! if cannot?(params[:action].to_sym, options[:namespace])
+          authorize!(params[:action].to_sym, options[:namespace])
         end
       end
     end
