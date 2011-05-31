@@ -2,12 +2,17 @@ module Fume
   module Authlogic
     def self.try_enable
       if defined? ::Authlogic
-        ActionController::Base.send :include, ControllerExtensions::InstanceMethods
-        ActionController::Base.send :helper_method, :current_user_session, :current_user
+        ActionController::Base.send :include, ControllerExtensions
       end
     end
     
     module ControllerExtensions
+      extend ActiveSupport::Concern
+      
+      included do
+        helper_method :current_user_session, :current_user
+      end
+      
       module InstanceMethods
         
         protected
@@ -20,6 +25,7 @@ module Fume
           return @current_user if defined?(@current_user)
           @current_user = current_user_session && current_user_session.user
         end
+        
       end
     end
   end
