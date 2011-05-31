@@ -9,7 +9,7 @@ module Fume
     module ControllerExtensions
       extend ActiveSupport::Concern
       
-      module ClassMehtods
+      module ClassMethods
         
         def authorize_object(options = {})
           filter_options = options.slice(:only, :except) if options.is_a?(Hash)
