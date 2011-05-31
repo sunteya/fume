@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "authlogic", "3.0.2"
   s.add_runtime_dependency "formtastic", "1.2.3"
   s.add_runtime_dependency "cancan", "1.6.4"
+  s.add_runtime_dependency "symbolize", "3.1.3"
   
   s.add_development_dependency "version", "1.0.0"
   # s.add_development_dependency "rspec", "~> 1.3.0"
