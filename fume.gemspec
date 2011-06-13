@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   
   # rails
   s.add_runtime_dependency "rake", "~> 0.8.7"
-  s.add_runtime_dependency "rails", "3.0.7"
+  s.add_runtime_dependency "rails", "3.0.8"
   
   # library
   s.add_runtime_dependency "timeliness", "~> 0.3.4"
