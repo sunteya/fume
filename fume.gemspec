@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "addressable", "~> 2.2.6"
   
   # rails plugin
-  s.add_runtime_dependency "authlogic", "3.0.2"
+  s.add_runtime_dependency "authlogic", "3.0.3"
   s.add_runtime_dependency "formtastic", "1.2.3"
   s.add_runtime_dependency "cancan", "1.6.4"
   s.add_runtime_dependency "symbolize", "3.1.3"
