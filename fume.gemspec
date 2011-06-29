@@ -27,9 +27,9 @@ Gem::Specification.new do |s|
   
   # rails plugin
   s.add_runtime_dependency "authlogic", "3.0.3"
-  s.add_runtime_dependency "formtastic", "1.2.3"
-  s.add_runtime_dependency "cancan", "1.6.4"
-  s.add_runtime_dependency "symbolize", "3.1.3"
+  s.add_runtime_dependency "formtastic", "1.2.4"
+  s.add_runtime_dependency "cancan", "1.6.5"
+  s.add_runtime_dependency "symbolize", "3.2.0"
   s.add_runtime_dependency "meta_search", "1.0.5"
   s.add_runtime_dependency "kaminari", "0.12.4"
   
