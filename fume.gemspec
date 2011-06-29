@@ -31,6 +31,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "cancan", "1.6.4"
   s.add_runtime_dependency "symbolize", "3.1.3"
   s.add_runtime_dependency "meta_search", "1.0.5"
+  s.add_runtime_dependency "kaminari", "0.12.4"
   
   
   # development
