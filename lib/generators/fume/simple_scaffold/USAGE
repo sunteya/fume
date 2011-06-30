@@ -1,0 +1,10 @@
+Description:
+    scaffold controller
+
+Example:
+    rails generate fume:simple_scaffold Admin::User name:string email:string 
+
+    This will create:
+        Controller:      app/controllers/admin/users_controller.rb
+        Views:           app/views/admin/users/index.html.erb [...]
+        
