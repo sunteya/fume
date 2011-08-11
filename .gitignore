@@ -3,3 +3,4 @@ coverage
 pkg/*
 tmp/*
 gem_graph.png
+Gemfile.lock
