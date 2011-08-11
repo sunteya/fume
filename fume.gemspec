@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   
   # library
   s.add_runtime_dependency "timeliness", "~> 0.3.4"
-  s.add_runtime_dependency "hashie", "~> 1.0.0"
+  s.add_runtime_dependency "hashie", "~> 1.1.0"
   s.add_runtime_dependency "addressable", "~> 2.2.6"
   
   # rails plugin
@@ -30,12 +30,12 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "formtastic", "1.2.4"
   s.add_runtime_dependency "cancan", "1.6.5"
   s.add_runtime_dependency "symbolize", "3.2.0"
-  s.add_runtime_dependency "meta_search", "1.0.5"
+  s.add_runtime_dependency "meta_search", "1.0.6"
   s.add_runtime_dependency "kaminari", "0.12.4"
   
   
   # development
-  s.add_development_dependency "version", "1.0.0"
+  s.add_development_dependency "version"
   # s.add_development_dependency "rspec", "~> 1.3.0"
 end
 
