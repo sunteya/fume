@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   
   
   # rails
-  s.add_runtime_dependency "rails", "~> 3.0.9"
+  s.add_runtime_dependency "rails", "~> 3.0.10"
   
   # library
   s.add_runtime_dependency "timeliness", "~> 0.3.4"
