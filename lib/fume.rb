@@ -13,5 +13,5 @@ module Fume
   autoload :Authlogic
   autoload :RailsExt
   autoload :Cancan
-  autoload :SimpleTheme
+  autoload :SimpleNav
 end

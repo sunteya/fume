@@ -1,8 +1,9 @@
+require "hashie"
+
 module Fume
   module SimpleNav
     
     def self.try_enable
-      require "hashie"
       ActionView::Base.send :include, HelperExtensions
     end
     
