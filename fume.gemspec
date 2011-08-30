@@ -21,9 +21,11 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "rails", "~> 3.0.10"
   s.add_runtime_dependency "rails-i18n", "~> 0.1.6"
   
+  # require library
+  s.add_runtime_dependency "hashie", "~> 1.1.0"
+  
   # library
   s.add_runtime_dependency "timeliness", "~> 0.3.4"
-  s.add_runtime_dependency "hashie", "~> 1.1.0"
   s.add_runtime_dependency "addressable", "~> 2.2.6"
   
   # rails plugin
