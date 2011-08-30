@@ -4,6 +4,20 @@ module Fume
       if defined? ::ActionController
         ActionController::Base.send :include, ControllerExtensions
       end
+      
+      if defined? ::ActiveRecord
+        ::ActiveRecord::Base.send :include, ActiveRecordExtensions
+      end
+    end
+    
+    module ActiveRecordExtensions
+      extend ActiveSupport::Concern
+      
+      module ClassMethods
+        def last_updated_at
+          self.reorder("").select("MAX(#{self.table_name}.updated_at) AS updated_at").first.try(:updated_at)
+        end
+      end
     end
     
     module ControllerExtensions
