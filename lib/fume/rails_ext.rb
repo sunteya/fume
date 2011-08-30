@@ -13,6 +13,19 @@ module Fume
         helper_method :public_path, :public_url
       end
       
+      module ClassMethods
+        def action_attr_accessor(sym, options = {})
+          class_eval(<<-EOS, __FILE__, __LINE__ + 1)
+            def self.#{sym}(obj)
+              before_filter { |c| c.send(:#{sym}=, obj) }
+            end
+
+            attr_accessor :#{sym}
+            helper_method :#{sym}, :#{sym}=
+          EOS
+        end
+      end
+      
       module InstanceMethods
         
         protected
