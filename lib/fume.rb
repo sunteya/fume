@@ -14,4 +14,5 @@ module Fume
   autoload :RailsExt
   autoload :Cancan
   autoload :SimpleNav
+  autoload :AppSettingLoader
 end

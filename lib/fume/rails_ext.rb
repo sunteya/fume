@@ -1,6 +1,6 @@
 module Fume
   module RailsExt
-    def self.try_enable
+    def self.try_enable(app)
       if defined? ::ActionController
         ActionController::Base.send :include, ControllerExtensions
       end
@@ -14,15 +14,17 @@ module Fume
       end
       
       module ClassMethods
-        def action_attr_accessor(sym, options = {})
-          class_eval(<<-EOS, __FILE__, __LINE__ + 1)
-            def self.#{sym}(obj)
-              before_filter { |c| c.send(:#{sym}=, obj) }
-            end
-
-            attr_accessor :#{sym}
-            helper_method :#{sym}, :#{sym}=
-          EOS
+        def action_attr_accessor(syms, options = {})
+          [ syms ].flatten.each do |sym|
+            class_eval(<<-EOS, __FILE__, __LINE__ + 1)
+              def self.#{sym}(obj)
+                before_filter { |c| c.send(:#{sym}=, obj) }
+              end
+              
+              attr_accessor :#{sym}
+              helper_method :#{sym}, :#{sym}=
+            EOS
+          end
         end
       end
       

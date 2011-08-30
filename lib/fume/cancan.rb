@@ -1,6 +1,6 @@
 module Fume
   module Cancan
-    def self.try_enable
+    def self.try_enable(app)
       if defined? ::CanCan
         ActionController::Base.send :include, ControllerExtensions
       end
