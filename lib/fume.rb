@@ -15,4 +15,5 @@ module Fume
   autoload :Cancan
   autoload :SimpleNav
   autoload :AppSettingLoader
+  autoload :RenderCache
 end
