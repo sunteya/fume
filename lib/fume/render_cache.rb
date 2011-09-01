@@ -25,23 +25,28 @@ module Fume
         end
 
         def render_cache(key, options = {})
-          key = build_render_cache_key(key)
-          cache = Rails.cache
+          if self.class.perform_caching
+            key = build_render_cache_key(key)
+            cache = Rails.cache
 
-          fragment = cache.read(key)
-          if fragment
-            response.charset = fragment[:charset]
-            response.content_type = fragment[:content_type]
-            self.response_body = fragment[:body].html_safe
+            fragment = cache.read(key)
+            if fragment
+              response.charset = fragment[:charset]
+              response.content_type = fragment[:content_type]
+              self.response_body = fragment[:body].html_safe
+            else
+              yield if block_given?
+
+              self.render_cache_params = {
+                :key => key,
+                :options => options,
+                :cache => cache
+              }
+            end
           else
             yield if block_given?
-
-            self.render_cache_params = {
-              :key => key,
-              :options => options,
-              :cache => cache
-            }
           end
+
         end
 
         def build_render_cache_key(key)
