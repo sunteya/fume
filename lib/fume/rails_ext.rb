@@ -28,8 +28,9 @@ module Fume
       end
       
       module ClassMethods
-        def action_attr_accessor(syms, options = {})
-          [ syms ].flatten.each do |sym|
+        def action_attr_accessor(*args)
+          options = args.extract_options!
+          [ args ].flatten.compact.each do |sym|
             class_eval(<<-EOS, __FILE__, __LINE__ + 1)
               def self.#{sym}(obj)
                 before_filter { |c| c.send(:#{sym}=, obj) }
