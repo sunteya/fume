@@ -1,7 +1,9 @@
 require "active_support"
-
-# rails 
 require File.expand_path("../fume/railtie", __FILE__)
+
+# 3rd gems
+require "rails-i18n"
+
 
 module Fume
   VERSION = File.read(File.expand_path("../../VERSION", __FILE__)).chomp
