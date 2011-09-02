@@ -1,8 +1,7 @@
 
 
-## 0.7.3:
- 
- - don't manual depent rails_i18n on project's Gemfile
+## 0.8.0
+
 
 ## 0.7.0 (2011-09-01):
   - add action_attr_accessor method

@@ -11,5 +11,10 @@ module Fume
         end
       end
     end
+    
+    rake_tasks do
+      Fume.load_tasks
+    end
+    
   end
 end
