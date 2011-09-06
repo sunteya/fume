@@ -1,7 +1,7 @@
 
 
 ## 0.8.0
-
+ - don't depends all rails plugin, you must depend it for yourself. 
 
 ## 0.7.0 (2011-09-01):
   - add action_attr_accessor method
