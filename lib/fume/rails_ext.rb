@@ -54,7 +54,7 @@ module Fume
           if source.include?("://")
             source
           else
-            request.protocol + request.host_with_port + url_for("#{controller.config.relative_url_root}#{source}")
+            request.protocol + request.host_with_port + public_path(source)
           end
         end
 
@@ -62,7 +62,8 @@ module Fume
           if source.include?("://")
             source
           else
-            url_for("#{controller.config.relative_url_root}#{source}")
+            url = url_for("#{source}")
+            "#{request.script_name}#{url}"
           end
         end
       end
