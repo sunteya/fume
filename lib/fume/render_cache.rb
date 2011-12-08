@@ -17,13 +17,6 @@ module Fume
 
       module InstanceMethods
         protected
-        def render_cache_by_scope(scope, options = {}, &block)
-          last_updated_at = scope.last_updated_at
-          sql = scope.to_sql
-          key = { :sql => sql, :last_updated_at => last_updated_at }
-          render_cache(key, options, &block)
-        end
-
         def render_cache(key, options = {})
           if self.class.perform_caching
             key = build_render_cache_key(key)
