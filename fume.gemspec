@@ -18,11 +18,11 @@ Gem::Specification.new do |s|
   
   
   # rails
-  s.add_runtime_dependency "rails", "~> 3.1.3"
-  s.add_runtime_dependency "rails-i18n", "~> 0.2.0"
+  s.add_runtime_dependency "rails", "~> 3.2.1"
+  s.add_runtime_dependency "rails-i18n", "~> 0.3.0"
   
   # require library
-  s.add_runtime_dependency "hashie", "~> 1.2.0"
+  s.add_runtime_dependency "hashie", ">= 1.2.0"
   
   # library
   # s.add_runtime_dependency "timeliness", "~> 0.3.4"
