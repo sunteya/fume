@@ -3,17 +3,17 @@ require "rails/railtie"
 module Fume
   class Railtie < ::Rails::Railtie
     initializer 'fume.initialize', :after => :after_initialize do |app|
-      Fume.constants.each do |name|
-        ext_module = Fume.const_get(name)
-        
-        if ext_module.respond_to?(:try_enable)
-          ext_module.try_enable(app)
-        end
-      end
+      RaileExt.init!
+      RenderCache.init!
+      SimpleNav.init!
+    end
+    
+    initializer "fume.after_initialize", :after => :after_initialize do |app|
+      AppSettingLoader.init!
     end
     
     rake_tasks do
-      Fume.load_tasks
+      ::Fume.load_tasks
     end
     
   end

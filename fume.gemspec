@@ -18,23 +18,9 @@ Gem::Specification.new do |s|
   
   
   # rails
-  s.add_runtime_dependency "rails", "~> 3.2.1"
-  s.add_runtime_dependency "rails-i18n", "~> 0.3.0"
-  
-  # require library
-  s.add_runtime_dependency "hashie", ">= 1.2.0"
-  
-  # library
-  # s.add_runtime_dependency "timeliness", "~> 0.3.4"
-  # s.add_runtime_dependency "addressable", "~> 2.2.6"
-  
-  # rails plugin
-  # s.add_runtime_dependency "authlogic", "~> 3.0.3"
-  # s.add_runtime_dependency "formtastic", "~> 1.2.4"
-  # s.add_runtime_dependency "cancan", "~> 1.6.5"
-  # s.add_runtime_dependency "symbolize", "~> 3.2.0"
-  # s.add_runtime_dependency "meta_search", "~> 1.0.6"
-  # s.add_runtime_dependency "kaminari", "~> 0.12.4"
+  s.add_dependency "rails", "~> 3.2.7"
+  s.add_dependency "rails-i18n", "~> 0.6.5"
+  s.add_dependency "hashie", ">= 1.2.0"
   
   # development
   s.add_development_dependency "version"

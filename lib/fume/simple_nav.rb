@@ -3,8 +3,10 @@ require "hashie"
 module Fume
   module SimpleNav
     
-    def self.try_enable(app)
-      ActionView::Base.send :include, HelperExtensions
+    def self.init!
+      if defined? ::ActionView::Base
+        ::ActionView::Base.send :include, HelperExtensions
+      end
     end
     
     module HelperExtensions

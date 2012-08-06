@@ -1,9 +1,23 @@
 module Fume
   module RenderCache
     
-    def self.try_enable(app)
-      if defined? ::ActionController
+    def self.init!(app)
+      if defined? ::ActionController::Base
         ActionController::Base.send :include, ControllerExtensions
+      end
+      
+      if defined? ::ActiveRecord::Base
+        ::ActiveRecord::Base.send :include, ActiveRecordExtensions
+      end
+    end
+    
+    module ActiveRecordExtensions
+      extend ActiveSupport::Concern
+      
+      module ClassMethods
+        def last_updated_at
+          self.reorder("").select("MAX(#{self.table_name}.updated_at) AS updated_at").first.try(:updated_at)
+        end
       end
     end
     

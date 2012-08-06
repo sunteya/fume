@@ -1,22 +1,19 @@
 module Fume
   module RailsExt
-    def self.try_enable(app)
-      if defined? ::ActionController
-        ActionController::Base.send :include, ControllerExtensions
+    
+    def self.init!(app)
+      if defined? ::ActionController::Base
+        ::ActionController::Base.send :include, ControllerExtensions
       end
       
-      if defined? ::ActiveRecord
-        ::ActiveRecord::Base.send :include, ActiveRecordExtensions
+      if defined? ::ActionView::Base
+        ::ActionView::Base.send :include, HelperExtensions
       end
     end
     
-    module ActiveRecordExtensions
-      extend ActiveSupport::Concern
-      
-      module ClassMethods
-        def last_updated_at
-          self.reorder("").select("MAX(#{self.table_name}.updated_at) AS updated_at").first.try(:updated_at)
-        end
+    module HelperExtensions
+      def ok_url_tag
+        hidden_field_tag "ok_url", params[:ok_url] if !params[:ok_url].blank?
       end
     end
     
@@ -52,15 +49,17 @@ module Fume
         if source.include?("://")
           source
         else
-          request.protocol + request.host_with_port + public_path(source)
+          "#{request.protocol}#{request.host_with_port}#{public_path(source)}"
         end
       end
 
       def public_path(source)
-        if source.include?("://")
-          source
+        url = url_for(source)
+        return url if url.include?("://")
+        
+        if url.start_with?(request.script_name)
+          url
         else
-          url = url_for("#{source}")
           "#{request.script_name}#{url}"
         end
       end
