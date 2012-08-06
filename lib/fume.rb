@@ -8,7 +8,6 @@ require "rails-i18n"
 module Fume
   extend ActiveSupport::Autoload
   
-  autoload :Authlogic
   autoload :RailsExt
   autoload :SimpleNav
   autoload :AppSettingLoader

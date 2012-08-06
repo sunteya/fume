@@ -1,4 +1,6 @@
-
+## 0.9.0
+ - extract cancan to standalone gem
+ - remove authlogic ext
 
 ## 0.8.0
  - don't depends all rails plugin, you must depend it for yourself. 
