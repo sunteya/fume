@@ -10,7 +10,6 @@ module Fume
   
   autoload :Authlogic
   autoload :RailsExt
-  autoload :Cancan
   autoload :SimpleNav
   autoload :AppSettingLoader
   autoload :RenderCache
