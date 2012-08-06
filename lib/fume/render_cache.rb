@@ -1,9 +1,9 @@
 module Fume
   module RenderCache
     
-    def self.init!(app)
+    def self.init!
       if defined? ::ActionController::Base
-        ActionController::Base.send :include, ControllerExtensions
+        ::ActionController::Base.send :include, ControllerExtensions
       end
       
       if defined? ::ActiveRecord::Base
@@ -12,7 +12,7 @@ module Fume
     end
     
     module ActiveRecordExtensions
-      extend ActiveSupport::Concern
+      extend ::ActiveSupport::Concern
       
       module ClassMethods
         def last_updated_at
@@ -22,7 +22,7 @@ module Fume
     end
     
     module ControllerExtensions
-      extend ActiveSupport::Concern
+      extend ::ActiveSupport::Concern
 
       included do
         attr_accessor :render_cache_params

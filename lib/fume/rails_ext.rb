@@ -1,7 +1,7 @@
 module Fume
   module RailsExt
     
-    def self.init!(app)
+    def self.init!
       if defined? ::ActionController::Base
         ::ActionController::Base.send :include, ControllerExtensions
       end

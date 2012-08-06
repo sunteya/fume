@@ -3,7 +3,7 @@ require "rails/railtie"
 module Fume
   class Railtie < ::Rails::Railtie
     initializer 'fume.initialize', :after => :after_initialize do |app|
-      RaileExt.init!
+      RailsExt.init!
       RenderCache.init!
       SimpleNav.init!
     end
@@ -13,7 +13,7 @@ module Fume
     end
     
     rake_tasks do
-      ::Fume.load_tasks
+      Fume.load_tasks
     end
     
   end
