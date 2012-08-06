@@ -43,32 +43,29 @@ module Fume
         end
       end
       
-      module InstanceMethods
-        
-        protected
-        def redirect_to_ok_url_or_default(default)
-          redirect_to params[:ok_url] || default
-        end
-        
-        def public_url(source)
-          if source.include?("://")
-            source
-          else
-            request.protocol + request.host_with_port + public_path(source)
-          end
-        end
-
-        def public_path(source)
-          if source.include?("://")
-            source
-          else
-            url = url_for("#{source}")
-            "#{request.script_name}#{url}"
-          end
+    protected
+      def redirect_to_ok_url_or_default(default)
+        redirect_to params[:ok_url] || default
+      end
+      
+      def public_url(source)
+        if source.include?("://")
+          source
+        else
+          request.protocol + request.host_with_port + public_path(source)
         end
       end
+
+      def public_path(source)
+        if source.include?("://")
+          source
+        else
+          url = url_for("#{source}")
+          "#{request.script_name}#{url}"
+        end
+      end
+      
     end
-    
   end
 end
 
