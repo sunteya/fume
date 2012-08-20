@@ -30,37 +30,33 @@ module Fume
       end
 
     protected
-      def render_cache(key, options = {})
-        if self.class.perform_caching
-          key = build_render_cache_key(key)
-          cache = Rails.cache
-
-          fragment = cache.read(key)
-          if fragment
+      
+      def render_cache(key, options)
+        params = self.render_cache_params
+        
+        if params[:cache]
+          params[:key] = build_render_cache_key(key)
+          params[:options] = options
+          
+          if fragment = params[:cache].read(params[:key])
+            params[:key] = nil
+            
             response.charset = fragment[:charset]
             response.content_type = fragment[:content_type]
             self.response_body = fragment[:body].html_safe
-          else
-            yield if block_given?
-
-            self.render_cache_params = {
-              :key => key,
-              :options => options,
-              :cache => cache
-            }
+            return
           end
-        else
-          yield if block_given?
         end
-
+        
+        yield if block_given?
       end
-
+      
       def build_render_cache_key(key)
         base = "render@#{params[:controller]}/#{params[:action]}.#{params[:format]}"
         key = self.key_to_string(key)
         "#{base}##{key}"
       end
-
+      
       def key_to_string(obj)
         case obj
         when nil
@@ -75,13 +71,19 @@ module Fume
           obj.to_s
         end
       end
-
     end
     
     class RenderCacheFilter
       def filter(controller)
+        controller.render_cache_params ||= {
+          options: {},
+          cache: nil
+        }
+        controller.render_cache_params[:cache] = Rails.cache if controller.class.perform_caching
+        
         yield
-        params = controller.render_cache_params || {}
+        
+        params = controller.render_cache_params
         if params[:key]
           content = {
             :charset => controller.response.charset,
