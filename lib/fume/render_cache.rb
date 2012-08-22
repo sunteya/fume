@@ -16,7 +16,7 @@ module Fume
       
       module ClassMethods
         def last_updated_at
-          self.reorder("").select("MAX(#{self.table_name}.updated_at) AS updated_at").first.try(:updated_at)
+          self.maximum(:updated_at)
         end
       end
     end
