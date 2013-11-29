@@ -5,7 +5,6 @@ module Fume
     initializer 'fume.initialize', :after => :after_initialize do |app|
       RailsExt.init!
       RenderCache.init!
-      SimpleNav.init!
     end
     
     initializer "fume.after_initialize", :after => :after_initialize do |app|

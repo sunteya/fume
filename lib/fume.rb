@@ -6,7 +6,6 @@ module Fume
   
   extend ActiveSupport::Autoload
   autoload :RailsExt
-  autoload :SimpleNav
   autoload :AppSettingLoader
   autoload :RenderCache
   
