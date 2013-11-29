@@ -18,8 +18,8 @@ Gem::Specification.new do |s|
   
   
   # rails
-  s.add_dependency "rails", "~> 3.2.13"
-  s.add_dependency "rails-i18n", "~> 0.7.2"
+  s.add_dependency "rails", ">= 3.2.13"
+  s.add_dependency "rails-i18n", ">= 0.7.2"
   s.add_dependency "hashie", ">= 1.2.0"
   
   # development
