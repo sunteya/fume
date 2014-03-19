@@ -1,9 +1,8 @@
 require "active_support"
 require "rails-i18n"
+require "fume/version"
 
 module Fume
-  VERSION = File.read(File.expand_path("../../VERSION", __FILE__)).chomp
-  
   extend ActiveSupport::Autoload
   autoload :RailsExt
   autoload :AppSettingLoader

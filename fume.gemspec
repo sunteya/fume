@@ -1,12 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-# require 'fume/version'
+require 'fume/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "fume"
-  # spec.version       = Fume::VERSION
-  spec.version       = File.read(File.expand_path("../VERSION", __FILE__)).chomp
+  spec.version       = Fume::VERSION
   spec.authors       = ["sunteya"]
   spec.email         = ["sunteya@gmail.com"]
   spec.summary       = %q{a simple rails scaffold.}
@@ -23,8 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rails-i18n", ">= 0.7.2"
   spec.add_dependency "hashie", ">= 1.2.0"
   
-  spec.add_development_dependency "version"
-  spec.add_development_dependency "bundler", "~> 1.6"
+  spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
 end
 
