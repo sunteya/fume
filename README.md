@@ -1,6 +1,7 @@
 # Fume
 
 [![Build Status](https://travis-ci.org/sunteya/fume.svg?branch=master)](https://travis-ci.org/sunteya/fume)
+[![Coverage Status](https://coveralls.io/repos/sunteya/fume/badge.png)](https://coveralls.io/r/sunteya/fume)
 
 ## Installation
 
