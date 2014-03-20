@@ -2,6 +2,7 @@ require 'bundler/setup'
 
 require 'combustion'
 Combustion.initialize! :all
+require 'rspec/rails'
 
 require "fume"
 require "pry-nav"
