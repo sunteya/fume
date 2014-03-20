@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Fume::VERSION
   spec.authors       = ["sunteya"]
   spec.email         = ["sunteya@gmail.com"]
-  spec.summary       = %q{a simple rails scaffold.}
-  spec.description   = %q{a simple rails scaffold.}
+  spec.summary       = %q{some simple rails extentions.}
+  spec.description   = %q{some simple rails extentions.}
   spec.homepage      = "https://github.com/sunteya/fume"
   spec.license       = "MIT"
 
