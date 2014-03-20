@@ -1,7 +1,0 @@
-<%%= f.inputs do %>
-<%- for attribute in attributes -%>
-	<%%= f.input :<%= attribute.name %><%= ", :as => :#{attribute.type}" if %w[select radio].include?(attribute.type.to_s) %> %>
-<%- end -%>
-<%% end %>
-
-<%%= f.buttons %>

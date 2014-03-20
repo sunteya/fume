@@ -4,4 +4,6 @@
 /tmp/*
 /gem_graph.png
 /Gemfile.lock
+/gemfiles/*.lock
+/tags
 /spec/internal/db/*.sqlite

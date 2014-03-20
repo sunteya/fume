@@ -1,5 +1,0 @@
-<h1>New <%%= <%= "#{model_class_name}.human_name" %> %></h1>
-
-<%%= semantic_form_for(<%= "@#{singular_model_name}" %>, :url => <%= resources_path_prefix %>_path()) do |f| %>
-	<%%= render :partial => "form", :locals => { :f => f } %>
-<%% end %>

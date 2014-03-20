@@ -74,7 +74,7 @@ module Fume
     end
     
     class RenderCacheFilter
-      def filter(controller)
+      def around(controller)
         controller.render_cache_params ||= {
           options: {},
           cache: nil
