@@ -24,7 +24,12 @@ Gem::Specification.new do |spec|
   
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
+
   spec.add_development_dependency "rspec", "~> 2.14.1"
+
+  spec.add_development_dependency "pry-nav"
+  spec.add_development_dependency "sqlite3"
+  spec.add_development_dependency "combustion", "~> 0.5.1"
 end
 
 
