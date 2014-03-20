@@ -3,7 +3,7 @@ require "spec_helper"
 describe Fume::RenderCache::ActiveRecordExtensions, type: :model do
   describe "#last_updated_at" do
     let!(:pages) { 10.times.map { Page.create } }
-    it { expect(Page.last_updated_at).to eq pages[-1].updated_at }
+    it { expect(Page.last_updated_at).to eq pages[-1].reload.updated_at }
   end
 end
 
