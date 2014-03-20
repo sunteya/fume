@@ -1,6 +1,8 @@
 ## 0.10
 - simple_nav to fume-nav gem
 - remove app_setting_loader, use fume-settable instead of it.
+- remove action_attr_accessor
+- remove simple_scaffold generator
 
 ## 0.9
  - extract cancan to standalone gem
