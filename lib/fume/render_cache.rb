@@ -79,6 +79,7 @@ module Fume
           options: {},
           cache: nil
         }
+
         controller.render_cache_params[:cache] = Rails.cache if controller.class.perform_caching
         
         yield

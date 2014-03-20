@@ -1,6 +1,5 @@
 require "spec_helper"
 
-
 describe Fume::RailsExt::ControllerExtensions, type: :controller do
   controller(ApplicationController) { }
 
