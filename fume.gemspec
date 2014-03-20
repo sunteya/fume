@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Fume::VERSION
   spec.authors       = ["sunteya"]
   spec.email         = ["sunteya@gmail.com"]
-  spec.summary       = %q{a simple rails scaffold.}
-  spec.description   = %q{a simple rails scaffold.}
+  spec.summary       = %q{some simple rails extentions.}
+  spec.description   = %q{some simple rails extentions.}
   spec.homepage      = "https://github.com/sunteya/fume"
   spec.license       = "MIT"
 
@@ -24,6 +24,12 @@ Gem::Specification.new do |spec|
   
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
+
+  spec.add_development_dependency "rspec-rails", "~> 2.14.1"
+
+  spec.add_development_dependency "pry-nav"
+  spec.add_development_dependency "sqlite3"
+  spec.add_development_dependency "combustion", "~> 0.5.1"
 end
 
 
