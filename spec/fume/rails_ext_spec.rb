@@ -25,7 +25,6 @@ describe Fume::RailsExt::ControllerExtensions, type: :controller do
   end
 
   describe "#public_url" do
-
     before { request.script_name = "/context" }
     subject { controller.send(:public_url, source) }
 
@@ -54,9 +53,25 @@ describe Fume::RailsExt::ControllerExtensions, type: :controller do
       it { should redirect_to("/foo") }
     end
 
-    context "then has ok_url" do
+    context "then have ok_url" do
       let(:params) { { ok_url: "/bar" } }
       it { should redirect_to("/bar") }
     end
   end
 end
+
+describe Fume::RailsExt::HelperExtensions, type: :helper do
+  describe "#ok_url_tag" do
+    subject { helper.ok_url_tag }
+
+    context "then not ok_url params" do
+      it { should eq nil }
+    end
+
+    context "then have ok_url" do
+      before { params[:ok_url] = "/foo" }
+      it { should include 'value="/foo"' }
+    end
+  end
+end
+
