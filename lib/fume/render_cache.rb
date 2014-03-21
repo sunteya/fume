@@ -38,12 +38,12 @@ module Fume
           params[:key] = build_render_cache_key(key)
           params[:options] = options
           
-          if fragment = params[:cache].read(params[:key])
+          if page = RenderCachePage.load(params[:cache].read(params[:key]))
             params[:key] = nil
             
-            response.charset = fragment[:charset]
-            response.content_type = fragment[:content_type]
-            self.response_body = fragment[:body].html_safe
+            response.charset = page.charset
+            response.content_type = page.content_type
+            self.response_body = page.body.html_safe
             return
           end
         end
@@ -66,7 +66,7 @@ module Fume
         when Array
           obj.map { |val| self.key_to_string(val) }.join(",")
         when Time, Date
-          obj.to_s(:db)
+          obj.utc.iso8601
         else
           obj.to_s
         end
@@ -86,13 +86,24 @@ module Fume
         
         params = controller.render_cache_params
         if params[:key]
-          content = {
-            :charset => controller.response.charset,
-            :content_type => controller.response.content_type,
-            :body => controller.response_body.is_a?(Array) ? controller.response_body.join : controller.response_body
-          }
-          params[:cache].write(params[:key], content, params[:options])
+          page = RenderCachePage.new(controller.response.charset,
+                                     controller.response.content_type,
+                                     controller.response_body.is_a?(Array) ? controller.response_body.join : controller.response_body)
+          params[:cache].write(params[:key], page.dump, params[:options])
         end
+      end
+    end
+
+    class RenderCachePage < Struct.new(:charset, :content_type, :body)
+      def self.load(io)
+        page = YAML.load(io) if io
+        page if page.is_a?(self)
+      rescue Exception
+        nil
+      end
+
+      def dump
+        YAML.dump(self)
       end
     end
 

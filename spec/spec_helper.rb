@@ -1,10 +1,13 @@
 require 'bundler/setup'
+require "simplecov"
 require 'coveralls'
 Coveralls.wear!
+# SimpleCov.start
 
 require 'combustion'
 Combustion.initialize! :all
 require 'rspec/rails'
+require "rspec-do_action"
 
 require "fume"
 require "pry-nav"
