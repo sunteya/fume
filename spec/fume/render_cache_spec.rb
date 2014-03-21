@@ -19,6 +19,7 @@ describe Fume::RenderCache::ControllerExtensions, type: :controller do
   end
 
   describe "#render_cache" do
+    before { Rails.cache.clear }
     before { controller.class.perform_caching = true }
     after  { controller.class.perform_caching = false }
 
