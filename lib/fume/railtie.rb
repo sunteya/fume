@@ -3,8 +3,8 @@ require "rails/railtie"
 module Fume
   class Railtie < ::Rails::Railtie
     initializer 'fume' do |app|
-      RailsExt.init!
       RailsControllerExts.init!
+      RailsHelperExts.init!
       RenderCache.init!
     end
     

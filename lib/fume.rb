@@ -4,7 +4,7 @@ require "fume/version"
 
 module Fume
   extend ActiveSupport::Autoload
-  autoload :RailsExt
+  autoload :RailsHelperExts
   autoload :RailsControllerExts
   autoload :RenderCache
   
