@@ -5,6 +5,8 @@ module Fume
     initializer 'fume' do |app|
       ControllerExts.init!
       HelperExts.init!
+      ::ActiveRecord::Base.send :include, RequireAccessor if defined? ::ActiveRecord::Base
+      
       
       RenderCache.init!
     end

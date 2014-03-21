@@ -7,6 +7,7 @@ module Fume
   autoload :HelperExts
   autoload :ControllerExts
   autoload :RenderCache
+  autoload :RequireAccessor
   
   def self.load_tasks
     Dir[File.expand_path("../tasks/*.rake", __FILE__)].each { |ext| load ext }
