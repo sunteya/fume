@@ -1,14 +1,8 @@
 module Fume
   module RenderCache
-    
     def self.init!
-      if defined? ::ActionController::Base
-        ::ActionController::Base.send :include, ControllerExtensions
-      end
-      
-      if defined? ::ActiveRecord::Base
-        ::ActiveRecord::Base.send :include, ActiveRecordExtensions
-      end
+      ::ActionController::Base.send :include, ControllerExtensions if defined? ::ActionController::Base
+      ::ActiveRecord::Base.send :include, ActiveRecordExtensions if defined? ::ActiveRecord::Base
     end
     
     module ActiveRecordExtensions
