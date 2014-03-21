@@ -29,4 +29,28 @@ describe Fume::RenderCache::ControllerExtensions, type: :controller do
     it { expect(Rails.cache).to be_exist(key) }
   end
 
+  describe "#key_to_string" do
+    subject { controller.send(:key_to_string, obj) }
+
+    context "obj is nil" do
+      let(:obj) { nil }
+      it { should eq "nil!" }
+    end
+
+    context "obj is array" do
+      let(:obj) { [ 1, 2 ] }
+      it { should eq "1,2" }
+    end
+
+    context "obj is hash" do
+      let(:obj) { { a: 1, b: 2 } }
+      it { should eq "a=1&b=2" }
+    end
+
+    context "obj is time" do
+      let(:obj) { Time.parse("2014-03-21T04:28:12+0000") }
+      it { should eq "2014-03-21T04:28:12Z" }
+    end
+  end
+
 end

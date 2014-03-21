@@ -66,7 +66,7 @@ module Fume
         when Array
           obj.map { |val| self.key_to_string(val) }.join(",")
         when Time, Date
-          obj.to_s(:db)
+          obj.utc.iso8601
         else
           obj.to_s
         end
