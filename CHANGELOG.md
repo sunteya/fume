@@ -4,6 +4,7 @@
 - remove app_setting_loader, use fume-settable instead of it.
 - remove action_attr_accessor
 - remove simple_scaffold generator
+- remove hashie gem depend
 - refactor code structure
 
 ## 0.9

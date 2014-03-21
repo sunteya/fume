@@ -20,7 +20,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "rails", ">= 3.2.13"
   spec.add_dependency "rails-i18n", ">= 0.7.2"
-  spec.add_dependency "hashie", ">= 1.2.0"
   
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
