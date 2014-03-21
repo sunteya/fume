@@ -93,18 +93,19 @@ module Fume
         end
       end
     end
-  end
 
-  class RenderCachePage < Struct.new(:charset, :content_type, :body)
-    def self.load(io)
-      page = YAML.load(io) if io
-      page if page.is_a?(self.class)
-    rescue ArgumentError
-      nil
+    class RenderCachePage < Struct.new(:charset, :content_type, :body)
+      def self.load(io)
+        page = YAML.load(io) if io
+        page if page.is_a?(self)
+      rescue Exception
+        nil
+      end
+
+      def dump
+        YAML.dump(self)
+      end
     end
 
-    def dump
-      YAML.dump(self)
-    end
   end
 end
