@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Fume::RailsHelperExts, type: :helper do
+describe Fume::HelperExts, type: :helper do
   describe "#ok_url_tag" do
     subject { helper.ok_url_tag }
 

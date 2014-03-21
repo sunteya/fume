@@ -1,5 +1,5 @@
 module Fume
-  module RailsControllerExts
+  module ControllerExts
     
     def self.init!
       ::ActionController::Base.send :include, ControllerExtensions if defined? ::ActionController::Base

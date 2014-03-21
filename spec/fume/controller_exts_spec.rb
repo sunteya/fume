@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Fume::RailsControllerExts, type: :controller do
+describe Fume::ControllerExts, type: :controller do
   controller(ApplicationController) { }
 
   describe "#public_path" do

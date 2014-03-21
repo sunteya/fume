@@ -1,5 +1,5 @@
 module Fume
-  module RailsHelperExts
+  module HelperExts
     
     def self.init!
       ::ActionView::Base.send :include, HelperExtensions if defined? ::ActionView::Base
