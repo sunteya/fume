@@ -5,7 +5,9 @@ require "fume/version"
 module Fume
   extend ActiveSupport::Autoload
   autoload :HelperExts
+  autoload :ActiveRecordExts
   autoload :ControllerExts
+
   autoload :RenderCache
   autoload :RequireAccessor
   
