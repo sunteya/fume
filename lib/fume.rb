@@ -4,7 +4,8 @@ require "fume/version"
 
 module Fume
   extend ActiveSupport::Autoload
-  autoload :RailsExt
+  autoload :HelperExts
+  autoload :ControllerExts
   autoload :RenderCache
   
   def self.load_tasks

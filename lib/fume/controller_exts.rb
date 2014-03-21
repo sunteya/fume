@@ -1,20 +1,8 @@
 module Fume
-  module RailsExt
+  module ControllerExts
     
     def self.init!
-      if defined? ::ActionController::Base
-        ::ActionController::Base.send :include, ControllerExtensions
-      end
-      
-      if defined? ::ActionView::Base
-        ::ActionView::Base.send :include, HelperExtensions
-      end
-    end
-    
-    module HelperExtensions
-      def ok_url_tag
-        hidden_field_tag "ok_url", params[:ok_url] if !params[:ok_url].blank?
-      end
+      ::ActionController::Base.send :include, ControllerExtensions if defined? ::ActionController::Base
     end
     
     module ControllerExtensions
@@ -22,9 +10,6 @@ module Fume
       
       included do
         helper_method :public_path, :public_url
-      end
-      
-      module ClassMethods
       end
       
     protected
@@ -50,7 +35,6 @@ module Fume
           "#{request.script_name}#{url}"
         end
       end
-      
     end
   end
 end
