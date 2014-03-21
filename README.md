@@ -3,6 +3,8 @@
 [![Build Status](https://travis-ci.org/sunteya/fume.svg?branch=master)](https://travis-ci.org/sunteya/fume)
 [![Coverage Status](https://coveralls.io/repos/sunteya/fume/badge.png)](https://coveralls.io/r/sunteya/fume)
 
+some simple rails extentions
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -14,6 +16,8 @@ And then execute:
     $ bundle
 
 ## Usage
+
+please read source code and spec file.
 
 ## Contributing
 
