@@ -8,7 +8,6 @@ describe Fume::RenderCache::ActiveRecordExtensions, type: :model do
 end
 
 
-
 describe Fume::RenderCache::ControllerExtensions, type: :controller do
   controller(ApplicationController) do
     def show
@@ -60,5 +59,4 @@ describe Fume::RenderCache::ControllerExtensions, type: :controller do
       it { should eq "2014-03-21T04:28:12Z" }
     end
   end
-
 end
