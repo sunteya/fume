@@ -22,4 +22,5 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = 'random'
+  config.before(:all) { FileUtils.mkdir_p File.expand_path("../../tmp/cache", __FILE__) } # ensure tmp/cache exists
 end
